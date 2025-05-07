@@ -1,0 +1,14 @@
+<h2>Ujian Pilihan Ganda</h2>
+<form method="POST" action="/submit">
+  <label>Nama:</label>
+  <input type="text" name="nama" required><br><br>
+  <% soal.forEach((s, i) => { %>
+    <div>
+      <p><%= i + 1 %>. <%= s.pertanyaan %></p>
+      <% s.opsi.forEach((opsi, j) => { %>
+        <label><input type="radio" name="jawaban[<%= i %>]" value="<%= j %>" required> <%= opsi %></label><br>
+      <% }) %>
+    </div>
+  <% }) %>
+  <button type="submit">Selesai</button>
+</form>

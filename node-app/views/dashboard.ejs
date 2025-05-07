@@ -1,0 +1,11 @@
+<h2>Dashboard Nilai</h2>
+<table border="1">
+  <tr><th>Nama</th><th>Skor</th><th>Tanggal</th></tr>
+  <% data.forEach(d => { %>
+    <tr>
+      <td><%= d.mahasiswa.nama %></td>
+      <td><%= d.skor %></td>
+      <td><%= d.tanggal.toLocaleDateString() %></td>
+    </tr>
+  <% }) %>
+</table>
