@@ -1,8 +1,8 @@
 import express from 'express';
-import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import connectDB from './config/db.js';
 
 import router from './routes/index.js';
 const PORT = 5555;
@@ -10,7 +10,7 @@ const app = express();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // DB Connect
-mongoose.connect('mongodb://mongo:27017/ujian_db');
+await connectDB();
 
 // Setup
 app.set('view engine', 'ejs');

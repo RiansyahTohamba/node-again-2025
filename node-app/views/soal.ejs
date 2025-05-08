@@ -5,8 +5,8 @@
   <% soal.forEach((s, i) => { %>
     <div>
       <p><%= i + 1 %>. <%= s.pertanyaan %></p>
-      <% s.opsi.forEach((opsi, j) => { %>
-        <label><input type="radio" name="jawaban[<%= i %>]" value="<%= j %>" required> <%= opsi %></label><br>
+      <% s.pilihan.forEach((pilihan, j) => { %>
+        <label><input type="radio" name="jawaban[<%= i %>]" value="<%= j %>" required> <%= pilihan %></label><br>
       <% }) %>
     </div>
   <% }) %>

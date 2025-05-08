@@ -2,5 +2,5 @@ import mongoose from 'mongoose';
 export default mongoose.model('SoalUjian', new mongoose.Schema({
   pertanyaan: String,
   pilihan: [String],
-  jawaban: String
+  jawabanBenar: String
 }));

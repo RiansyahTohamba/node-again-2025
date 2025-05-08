@@ -1,9 +1,10 @@
 import mongoose from 'mongoose';
 import CalonMahasiswa from '../models/CalonMahasiswa.js';
+import connectDB from '../config/db.js';
+
+await connectDB();
 
 try {
-  await mongoose.connect('mongodb://mongo:27017/ujian_db');
-  console.log('Terhubung ke MongoDB');
 
   await CalonMahasiswa.deleteMany();
 
