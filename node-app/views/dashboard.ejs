@@ -6,11 +6,14 @@
 </head>
 <body class="container mt-4">
   <h2>Dashboard Nilai Calon Mahasiswa</h2>
+  <ul>
+    <li><a href="/">Mulai Ujian</a></li>
+    <li><a href="/Dashboard">Dashboard </a></li>
+  </ul>
   <table class="table table-bordered mt-3">
     <thead class="table-light">
       <tr>
         <th>Nama</th>
-        <th>Email</th>
         <th>Rata-rata</th>
         <th>Maksimum</th>
         <th>Minimum</th>
@@ -21,8 +24,7 @@
       <% data.forEach(item => { %>
         <tr>
           <td><%= item.nama %></td>
-          <td><%= item.email %></td>
-          <td> item.rataNilai.toFixed(2) %></td>
+          <td><%= item.rataNilai.toFixed(2) %></td>
           <td><%= item.maxNilai %></td>
           <td><%= item.minNilai %></td>
           <td><%= item.jumlahTes %></td>

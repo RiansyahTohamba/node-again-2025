@@ -8,7 +8,7 @@ export const submitJawaban = async (req, res) => {
   if (!mhs) mhs = await CalonMahasiswa.create({ nama });
 
   const soal = await SoalUjian.find();
-  let skor = 0;
+  let nilai = 0;
 
   const jawaban = Object.keys(req.body)
     .filter(key => key.startsWith('jawaban['))
@@ -22,11 +22,11 @@ export const submitJawaban = async (req, res) => {
   soal.forEach((s, i) => {
     const jawabanUser = s.pilihan[parseInt(jawaban[i])]; // ubah index jadi string jawaban
     if (s.jawabanBenar === jawabanUser) {
-      skor += 1;
+      nilai += 1;
     }
   });
 
-  await HasilTes.create({ mahasiswa: mhs._id, jawaban, skor });
+  await HasilTes.create({ mahasiswa: mhs._id, jawaban, nilai });
 
-  res.render('hasil', { nama, skor, total: soal.length });
+  res.render('hasil', { nama, nilai, total: soal.length });
 };

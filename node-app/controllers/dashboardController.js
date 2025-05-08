@@ -26,7 +26,6 @@ export const tampilkanDashboard = async (req, res) => {
         $project: {
           _id: 0,
           nama: "$mahasiswa.nama",
-          email: "$mahasiswa.email",
           rataNilai: 1,
           maxNilai: 1,
           minNilai: 1,
