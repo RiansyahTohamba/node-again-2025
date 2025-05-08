@@ -5,7 +5,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 import router from './routes/index.js';
-
+const PORT = 5555;
 const app = express();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -19,4 +19,4 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static('public'));
 app.use('/', router);
 
-app.listen(3000, () => console.log('Server running on http://localhost:3000'));
+app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
